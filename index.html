@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cia Manguitas Rotadoras - Links</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="image-container">
+                <img src="/b7e67b83-92e9-4803-bd70-2b2a2986e8cf.jpg" alt="Cia Manguitas Rotadoras" class="header-img">
+                <div class="fade-overlay"></div>
+            </div>
+            <div class="profile-info">
+                <h1 class="title">Cia Manguitas Rotadoras</h1>
+                <p class="subtitle">Cia Circense ✣ Acrobacias Aéreas</p>
+                <div class="social-icons">
+                    <a href="mailto:contato@exemplo.com" class="icon-link" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                    <a href="https://wa.me/55000000000" class="icon-link" aria-label="WhatsApp">
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Links Section -->
+        <main class="links-container">
+            <!-- Simple Link -->
+            <a href="#" class="btn btn-primary">Patifório Artístico</a>
+
+            <!-- Accordion Links -->
+            <div class="accordion">
+                <button class="btn btn-primary accordion-header">
+                    <span>Giu Clerot</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <img src="/a/32E3414B-B8AC-4FA7-B611-4DE98BF65448 2.JPG" alt="Giu Clerot" class="avatar-small">
+                        <p>Acrobata aérea especializada em tecido e trapézio.</p>
+                        <div class="sub-links">
+                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="btn btn-primary accordion-header">
+                    <span>Dani Oliveira</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <img src="/a/32E3414B-B8AC-4FA7-B611-4DE98BF65448 2 (1).JPG" alt="Dani Oliveira" class="avatar-small">
+                        <p>Performer e instrutora de artes circenses.</p>
+                        <div class="sub-links">
+                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="btn btn-primary accordion-header">
+                    <span>Ju Campos</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <img src="/a/dd9ed76f-23f3-404f-89ea-e8dccad10673" alt="Ju Campos" class="avatar-small">
+                        <p>Foco em flexibilidade e força nas alturas.</p>
+                        <div class="sub-links">
+                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Floating Close Button -->
+        <div class="footer-action">
+            <button class="close-btn" id="closeAllAccordions" aria-label="Fechar">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createIcons, Mail, MessageCircle, ChevronDown, Instagram, X } from 'https://esm.sh/lucide';
+        
+        // Initialize Lucide icons
+        createIcons({
+            icons: {
+                Mail,
+                MessageCircle,
+                ChevronDown,
+                Instagram,
+                X
+            }
+        });
+
+        const accordions = document.querySelectorAll('.accordion');
+        const closeBtn = document.getElementById('closeAllAccordions');
+        
+        const updateBodyState = () => {
+            const anyOpen = Array.from(accordions).some(acc => acc.classList.contains('open'));
+            if (anyOpen) {
+                document.body.classList.add('accordion-open');
+            } else {
+                document.body.classList.remove('accordion-open');
+            }
+        };
+
+        // Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordion = button.parentElement;
+                const isOpening = !accordion.classList.contains('open');
+                
+                // Close all others
+                accordions.forEach(other => {
+                    if (other !== accordion) {
+                        other.classList.remove('open');
+                    }
+                });
+
+                // Toggle current
+                accordion.classList.toggle('open');
+                updateBodyState();
+
+                // Auto-scroll when opening
+                if (isOpening) {
+                    setTimeout(() => {
+                        accordion.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 200);
+                }
+            });
+        });
+
+        // Close all logic
+        closeBtn.addEventListener('click', () => {
+            accordions.forEach(acc => acc.classList.remove('open'));
+            updateBodyState();
+        });
+    </script>
+</body>
+</html>
