@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -22,11 +24,11 @@
                 <h1 class="title">Cia Manguitas Rotadoras</h1>
                 <p class="subtitle">Cia Circense ✣ Acrobacias Aéreas</p>
                 <div class="social-icons">
-                    <a href="mailto:contato@exemplo.com" class="icon-link" aria-label="Email">
-                        <i data-lucide="mail"></i>
+                    <a href="mailto:manguitasrotadoras@gmail.com" class="icon-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://wa.me/55000000000" class="icon-link" aria-label="WhatsApp">
-                        <i data-lucide="message-circle"></i>
+                    <a href="https://wa.me/5561998443023" class="icon-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
@@ -35,20 +37,20 @@
         <!-- Links Section -->
         <main class="links-container">
             <!-- Simple Link -->
-            <a href="#" class="btn btn-primary">Patifório Artístico</a>
+            <a href="https://drive.google.com/file/d/1zJ96Kiq-HKD9gDaeV4OLhdA8eXEsHEJE/view?usp=drivesdk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Patifório Artístico</a>
 
             <!-- Accordion Links -->
             <div class="accordion">
                 <button class="btn btn-primary accordion-header">
                     <span>Giu Clerot</span>
-                    <i data-lucide="chevron-down" class="chevron"></i>
+                    <i class="fas fa-chevron-down chevron"></i>
                 </button>
                 <div class="accordion-content">
                     <div class="content-inner">
                         <img src="images/giu_clerot.JPG" alt="Giu Clerot" class="avatar-small">
                         <p>Acrobata aérea especializada em tecido e trapézio.</p>
                         <div class="sub-links">
-                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                            <a href="https://www.instagram.com/giu.c_a?igsh=dXdkMXo3NDRnMXB3&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -57,14 +59,14 @@
             <div class="accordion">
                 <button class="btn btn-primary accordion-header">
                     <span>Dani Oliveira</span>
-                    <i data-lucide="chevron-down" class="chevron"></i>
+                    <i class="fas fa-chevron-down chevron"></i>
                 </button>
                 <div class="accordion-content">
                     <div class="content-inner">
                         <img src="images/dani.JPG" alt="Dani Oliveira" class="avatar-small">
                         <p>Performer e instrutora de artes circenses.</p>
                         <div class="sub-links">
-                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                            <a href="https://www.instagram.com/danioliveira.inspira?igsh=MXQ2dGw3ZGU5Ympuag==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -73,14 +75,14 @@
             <div class="accordion">
                 <button class="btn btn-primary accordion-header">
                     <span>Ju Campos</span>
-                    <i data-lucide="chevron-down" class="chevron"></i>
+                    <i class="fas fa-chevron-down chevron"></i>
                 </button>
                 <div class="accordion-content">
                     <div class="content-inner">
                         <img src="images/ju_oliveira.JPG" alt="Ju Campos" class="avatar-small">
                         <p>Foco em flexibilidade e força nas alturas.</p>
                         <div class="sub-links">
-                            <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                            <a href="https://www.instagram.com/juolicampos?igsh=MWRkOWdjbzVncDg0aA==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -90,26 +92,13 @@
         <!-- Floating Close Button -->
         <div class="footer-action">
             <button class="close-btn" id="closeAllAccordions" aria-label="Fechar">
-                <i data-lucide="x"></i>
+                <i class="fas fa-times"></i>
             </button>
         </div>
     </div>
 
     <!-- Scripts -->
-    <script type="module">
-        import { createIcons, Mail, MessageCircle, ChevronDown, Instagram, X } from 'https://esm.sh/lucide';
-        
-        // Initialize Lucide icons
-        createIcons({
-            icons: {
-                Mail,
-                MessageCircle,
-                ChevronDown,
-                Instagram,
-                X
-            }
-        });
-
+    <script>
         const accordions = document.querySelectorAll('.accordion');
         const closeBtn = document.getElementById('closeAllAccordions');
         
