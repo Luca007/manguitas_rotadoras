@@ -123,12 +123,9 @@ body::before {
     transform: scale(0.9);
 }
 
-.icon-link svg,
-.icon-link i {
+.icon-link .icon {
     width: 24px;
     height: 24px;
-    font-size: 24px;
-    line-height: 1;
 }
 
 /* Links & Buttons */
@@ -276,8 +273,19 @@ body.accordion-open .footer-action {
     pointer-events: auto;
 }
 
+.close-btn .icon {
+    width: 20px;
+    height: 20px;
+}
+
 .close-btn:active {
     transform: scale(0.9);
+}
+
+.sub-links a .icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 /* Desktop optimization */
@@ -293,6 +301,9 @@ body.accordion-open .footer-action {
         overflow-y: auto;
         background: rgba(178, 200, 247, 0.2);
         backdrop-filter: blur(10px);
+    }
+    .footer-action {
+        bottom: calc(10vh - 10px);
     }
 }
 
